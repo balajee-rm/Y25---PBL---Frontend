@@ -109,7 +109,7 @@ body {
   .menu{
     display: block;
     float: left;
-    margin-left: -30vw;
+    margin-left: -10vw;
   }
   .navlinks{
     display: none;
@@ -120,9 +120,9 @@ body {
   .active{
     display: block;
     width: 60vw;
-    margin-left: -25vw;
+    margin-left: -15vw;
     position: fixed;
-    margin-top: -10px;
+    margin-top: 45px;
   }
   .active ul {
     display: block;

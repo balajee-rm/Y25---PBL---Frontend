@@ -26,7 +26,7 @@ function Signup() {
 
     console.log("Before Sending Data:", data);
 
-    fetch("http://localhost:4000/users/signup", {
+    fetch("http://pbl.klef.in/users/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

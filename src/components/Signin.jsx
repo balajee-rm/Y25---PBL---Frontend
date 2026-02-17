@@ -1,5 +1,6 @@
 import React from 'react'
 import Cookies from "js-cookie";
+import { Link } from 'react-router-dom';
 
 
 function Signin() {
@@ -16,7 +17,7 @@ function Signin() {
   
       console.log("Before Sending Data:", data);
   
-      fetch("http://localhost:4000/users/signin", {
+      fetch("http://pbl.klef.in/users/signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -59,8 +60,8 @@ function Signin() {
         </tr>
 
         <tr>
-          <td> <a href="/forgotpw"> Forgot Password? </a> </td>
-          <td> <a href="/signup"> New User? Click Here to Signup </a> </td>
+          <td> <Link to="/forgotpw"> Forgot Password? </Link> </td>
+          <td> <Link to="/signup"> New User? Click Here to Signup </Link> </td>
         </tr>
 
       </table>

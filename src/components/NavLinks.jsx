@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import menu from './List'
 
 function NavLinks() {
 
@@ -15,8 +17,10 @@ function NavLinks() {
 
       <div className='navlinks'>
         <ul>
-            <li><a href="/signin">Signin</a></li>
-            <li><a href="/signup">Signup</a></li>
+          {Cookies.get("user") && JSON.parse(Cookies.get("user")).menus.map((item, index) => (
+            <li key={index}> <Link to={`/${item.name.toLowerCase()}`}> {item.name}</Link> </li>
+          ))}
+          <li> <Link to="/signin" onClick={() => Cookies.remove("token")}> Signout </Link> </li>
         </ul>
       </div>
 
