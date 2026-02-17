@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Dashboard() {
 
   useEffect(() => {
 
-    fetch("http://pbl.klef.in/users/uinfo", {
+    fetch(`${API_URL}/users/uinfo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Signup() {
 
   const [fn, setFn] = React.useState("")
@@ -26,7 +28,7 @@ function Signup() {
 
     console.log("Before Sending Data:", data);
 
-    fetch("http://pbl.klef.in/users/signup", {
+    fetch(`${API_URL}/users/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

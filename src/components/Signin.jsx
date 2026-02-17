@@ -2,6 +2,7 @@ import React from 'react'
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Signin() {
 
@@ -17,7 +18,7 @@ function Signin() {
   
       console.log("Before Sending Data:", data);
   
-      fetch("http://pbl.klef.in/users/signin", {
+      fetch(`${API_URL}/users/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
