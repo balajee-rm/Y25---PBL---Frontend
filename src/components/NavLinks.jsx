@@ -20,7 +20,7 @@ function NavLinks() {
           {Cookies.get("user") && JSON.parse(Cookies.get("user")).menus.map((item, index) => (
             <li key={index}> <Link to={`/${item.name.toLowerCase()}`}> {item.name}</Link> </li>
           ))}
-          <li> <Link to="/signin" onClick={() => Cookies.remove("token")}> Signout </Link> </li>
+          <li> <Link to="/signin" onClick={() => Object.keys(Cookies.get()).forEach(cookieName => {Cookies.remove(cookieName);})}> Signout </Link> </li>
         </ul>
       </div>
 

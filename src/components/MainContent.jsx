@@ -4,6 +4,7 @@ import Signup from './Signup'
 import Signin from './Signin'
 import Forgotpw from './Forgotpw'
 import Dashboard from './Dashboard'
+import Profile from './Profile'
 
 function MainContent() {
 
@@ -16,6 +17,7 @@ function MainContent() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/forgotpw" element={<Forgotpw />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/my profile" element={<Profile />} />
             </Routes>
         
     </div>

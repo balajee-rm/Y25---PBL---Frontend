@@ -5,6 +5,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function Dashboard() {
 
+  const [userInfo, setUserInfo] = React.useState(null);
+
   useEffect(() => {
 
     fetch(`${API_URL}/users/uinfo`, {
@@ -21,6 +23,7 @@ function Dashboard() {
         if (res.code === 200) {
           console.log("User Info:", res);
           Cookies.set("user", JSON.stringify(res));
+          setUserInfo(res);
         } else {
           alert("Menu failed: " + res.message);
         }
