@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Signup() {
+
+  const navigate = useNavigate();
 
   const [fn, setFn] = React.useState("")
   const [ln, setLn] = React.useState("")
@@ -36,9 +39,16 @@ function Signup() {
         body: JSON.stringify(data)
       })
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => {
+          console.log(res)
+          if (res.code === 200) {
+            alert("Signup successful! Please signin to continue.");
+            navigate("/signin");
+          } else {
+            alert("Signup failed: " + res.message)
+          }
+        })
         .catch(err => console.log(err))
-
   }
 
   return (

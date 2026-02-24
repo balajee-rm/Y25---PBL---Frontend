@@ -5,6 +5,7 @@ import Signin from './Signin'
 import Forgotpw from './Forgotpw'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
+import UserManagement from './UserManagement'
 
 function MainContent() {
 
@@ -18,6 +19,7 @@ function MainContent() {
                 <Route path="/forgotpw" element={<Forgotpw />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/my profile" element={<Profile />} />
+                <Route path="/user management" element={<UserManagement />} />
             </Routes>
         
     </div>

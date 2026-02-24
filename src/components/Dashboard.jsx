@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
+import { CounterContext } from "../App";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Dashboard() {
 
-  const [userInfo, setUserInfo] = React.useState(null);
+  const { userInfo, setUserInfo } = React.useContext(CounterContext);
 
   useEffect(() => {
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import Cookies from "js-cookie";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Signin() {
+
+    const navigate = useNavigate();
 
     const [em, setEm] = React.useState("")
     const [pw, setPw] = React.useState("")
@@ -30,7 +32,7 @@ function Signin() {
             console.log(res)
             if (res.code === 200) {
               Cookies.set("token", res.token);
-              window.location.href = "/dashboard"
+              navigate("/dashboard");
             } else {
               alert("Signin failed: " + res.message)
             }
